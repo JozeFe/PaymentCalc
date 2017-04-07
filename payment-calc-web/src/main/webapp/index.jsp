@@ -25,6 +25,5 @@
         <!-- content provided by routing -->
         <div ng-view></div>
 </div>
-<%--<script src="https://code.jquery.com/ui/1.10.4/jquery-ui.min.js"></script>--%>
 </body>
 </html>

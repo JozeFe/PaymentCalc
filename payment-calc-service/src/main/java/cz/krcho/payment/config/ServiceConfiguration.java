@@ -17,6 +17,13 @@ import org.springframework.context.annotation.Configuration;
 @ComponentScan(basePackages = {"cz.krcho.payment.service", "cz.krcho.payment.facade"})
 public class ServiceConfiguration {
 
+    /**
+     * Dozer is used for mapping entities from service layer
+     * to DTO entities in mvc controller layer.
+     *
+     * Source is http://dozer.sourceforge.net/documentation/apimappings.html
+     * @return Mapper
+     */
     @Bean
     public Mapper dozer() {
         DozerBeanMapper dozer = new DozerBeanMapper();

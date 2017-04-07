@@ -8,5 +8,11 @@ import cz.krcho.payment.dto.PaymentDTO;
  */
 public interface PaymentFacade {
 
+    /**
+     * The method will calculate instalment value inside
+     * PaymentDTO from months and amount attributes
+     * @param paymentInfo
+     * @return PaymentDTO with calculated value of instalment
+     */
     PaymentDTO calculateMonthlyInstalments(PaymentDTO paymentInfo);
 }

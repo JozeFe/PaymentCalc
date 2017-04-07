@@ -17,7 +17,7 @@ controllers.controller('PaymentCalcCtrl',
             'amount' : 0,
             'instalment' : 0
         };
-        // function called when submit button is clicked, call calc function on server
+        // function called when submit button is clicked,and will call calc function on server
         $scope.create = function (payment) {
             $http({
                 method: 'POST',
