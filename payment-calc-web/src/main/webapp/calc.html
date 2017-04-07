@@ -1,0 +1,69 @@
+<script>
+    var slider = new Slider("#months");
+    slider.on("slide", function(sliderValue) {
+        document.getElementById("monthsSpanValue").textContent = sliderValue;
+    });
+    var slider = new Slider("#amount");
+    slider.on("slide", function(sliderValue) {
+        document.getElementById("amountSpanValue").textContent = sliderValue;
+    });
+</script>
+
+<h3 class="text-muted">Půjčky ihned!</h3>
+
+<div class="panel panel-default">
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-6">
+                <form name="form" class="form-horizontal">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Kolik si chci půjčit</h3>
+                        </div>
+                        <div class="form-group">
+                            <label for="amount" class="control-label"></label>
+                            <div class="panel-body" style="padding: 15px 30px 15px 30px;">
+                                <span></span>
+                                <input id="amount" type="text" data-slider-min="20000" data-slider-max="800000" data-slider-step="20000"
+                                data-slider-value="200000" name="amount" class="form-control"
+                                data-slider-ticks="[20000, 800000]"
+                                data-slider-ticks-labels='["20000 Kč", "800000 Kč"]'
+                                ng-model="payment.amount" ng-init="payment.amount='200000'"/>
+                                <b><span class="bigSpan"><span id="amountSpanValue">200000</span> Kč</span></b>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Na jak dlouho</h3>
+                        </div>
+                        <div class="form-group" >
+                            <label for="months" class="control-label"></label>
+
+
+                            <div class="panel-body" style="padding: 15px 30px 15px 30px;">
+                                <input id="months" type="text" data-slider-min="24" data-slider-max="96" data-slider-step="12"
+                                data-slider-value="48" name="months" class="form-control"
+                                data-slider-ticks="[24, 96]"
+                                data-slider-ticks-labels='["24 měsíců", "96 měsíců"]'
+                                ng-model="payment.months" ng-init="payment.months='48'"/>
+                                <b><span class="bigSpan"><span id="monthsSpanValue">48</span> Měsíců</span></b>
+                            </div>
+                        </div>
+                    </div>
+                    <button ng-click="create(payment)" class="btn btn-primary" type="submit" >Calculate</button>
+                </form>
+            </div>
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <div id="p1" class="panel-body">
+                        <p id="text1">Měsíčně zaplatíte:</br>
+                        {{payment.instalment}} Kč</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
